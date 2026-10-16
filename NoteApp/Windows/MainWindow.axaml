@@ -1,0 +1,257 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NoteApp.MainWindow"
+        Title="NOTE — Мои заметки" 
+        Width="1200" 
+        Height="800" 
+        MinWidth="760" 
+        MinHeight="560" 
+        WindowStartupLocation="CenterScreen" 
+        RequestedThemeVariant="Light" 
+        Background="#FFFBEF">
+        
+        <Grid ColumnDefinitions="250,*">
+                <Border Grid.Column="0"
+                        Background="#FFFFFF"
+                        BorderBrush="#EAE7DF"
+                        BorderThickness="0,0,1,0">
+                        
+                        <Grid RowDefinitions="Auto,*,Auto">
+                                <StackPanel Grid.Row="0" 
+                                            Orientation="Horizontal" 
+                                            Spacing="16" 
+                                            VerticalAlignment="Center" 
+                                            Margin="32,24,32,16">
+                        
+                                        <Border Background="#FFC928" 
+                                                CornerRadius="14" 
+                                                Width="54" 
+                                                Height="54">
+                                
+                                                <TextBlock Text="▤" 
+                                                           FontSize="32" 
+                                                           Foreground="#202238" 
+                                                           HorizontalAlignment="Center" 
+                                                           VerticalAlignment="Center"/>
+                                        </Border>
+                                        <StackPanel VerticalAlignment="Center" 
+                                                    Spacing="0">
+                                                
+                                                <TextBlock Text="NOTE" 
+                                                           FontSize="30" 
+                                                           FontWeight="Bold" 
+                                                           Foreground="#202238" 
+                                                           VerticalAlignment="Center"/>
+                                </StackPanel>
+                        </StackPanel>
+                                <StackPanel Grid.Row="1"
+                                            Margin="14,0,14,12"
+                                            Spacing="12">
+                                        <TextBlock Text="МОЕ ПРОСТРАНСТВО"
+                                                   FontSize="11"
+                                                   FontWeight="Bold"
+                                                   Foreground="#9998A9"
+                                                   Margin="8,0,0,4"/>
+                                        <Button x:Name="AddNoteButton"
+                                                Content="+ Новая заметка" 
+                                                Padding="20,0"
+                                                Height="42" 
+                                                Background="#FFC928" 
+                                                Foreground="#202238" 
+                                                FontSize="14" 
+                                                FontWeight="SemiBold" 
+                                                CornerRadius="10" 
+                                                BorderThickness="0"
+                                                HorizontalAlignment="Stretch"
+                                                HorizontalContentAlignment="Left"
+                                                VerticalContentAlignment="Center"/>
+                                        
+                                        <Button x:Name="AddFolderButton"
+                                                Content="+ Новая папка"
+                                                Height="42" 
+                                                Padding="20,0"
+                                                Background="#FFC928" 
+                                                Foreground="#202238" 
+                                                FontSize="14" 
+                                                FontWeight="SemiBold" 
+                                                CornerRadius="10" 
+                                                BorderThickness="0"
+                                                HorizontalAlignment="Stretch"
+                                                HorizontalContentAlignment="Left"
+                                                VerticalContentAlignment="Center"/>
+                                        
+                                        <TextBlock Text="ПАПКИ" 
+                                                   FontSize="11" 
+                                                   FontWeight="Bold" 
+                                                   Foreground="#9998A9" 
+                                                   Margin="8,14,0,0"/>
+                                        
+                                        <TreeView x:Name="NotesTreeView">
+                                                 <TreeViewItem Header="📁 Папка_01" 
+                                                               IsExpanded="True">
+                                                          <TreeViewItem Header="📄 Файл_01"/> 
+                                                          <TreeViewItem Header="📁 Вложенная папка"/>
+                                                 </TreeViewItem> <TreeViewItem Header="📁 Папка_02">
+                                                         <TreeViewItem Header="📄 Файл_02"/> 
+                                                         <TreeViewItem Header="📁 Вложенная папка"/>
+                                                </TreeViewItem>
+                                        </TreeView>
+                                </StackPanel>
+                                
+                                <Border Grid.Row="2"
+                                        Background="#FFFBEF"
+                                        CornerRadius="14"
+                                        Padding="12"
+                                        Margin="14,8,14,18">
+                                        
+                                        <StackPanel Spacing="8">
+                                                <StackPanel Orientation="Horizontal"
+                                                            Spacing="10">
+                                                        <Border Width="38"
+                                                                Height="38"
+                                                                CornerRadius="12"
+                                                                Background="#FFE9A0">
+                                                                
+                                                                <TextBlock Text="T"
+                                                                           FontSize="19"
+                                                                           FontWeight="Bold"
+                                                                           Foreground="#202238"
+                                                                           HorizontalAlignment="Center"
+                                                                           VerticalAlignment="Center"/>
+                                                        </Border>
+                                                        
+                                                        <StackPanel VerticalAlignment="Center"
+                                                                    Spacing="3">
+                                                                
+                                                                <TextBlock Text="testLogin"
+                                                                           FontSize="14"
+                                                                           FontWeight="SemiBold"
+                                                                           Foreground="#202238"/>
+                                                                
+                                                                <TextBlock Text="testEmail"
+                                                                           FontSize="11"
+                                                                           Foreground="#8586A5"/>
+                                                                </StackPanel>
+                                                        </StackPanel>
+                                                        
+                                                <TextBlock Text="Регистрация: 01.01.2023"
+                                                           FontSize="10"
+                                                           Foreground="#8586A5"
+                                                           TextWrapping="Wrap"/>
+                                                
+                                                <Button x:Name="ExitButton"
+                                                        Content="Выйти из аккаунта" 
+                                                        Height="34" 
+                                                        Background="#FFF0ED" 
+                                                        Foreground="#B84638" 
+                                                        HorizontalAlignment="Stretch"
+                                                        Padding="15,0"
+                                                        VerticalContentAlignment="Center"
+                                                        BorderBrush="#EAE7DF" 
+                                                        BorderThickness="0" 
+                                                        CornerRadius="8"/>
+                                        </StackPanel>
+                                </Border>
+                        </Grid>
+                </Border>
+                
+                <Grid Grid.Column="1"
+                      RowDefinitions="Auto,Auto,*"
+                      Margin="28,26,28,24">
+                        
+                        <Grid Grid.Row="0"
+                              ColumnDefinitions="*,Auto"
+                              ColumnSpacing="16">
+                                
+                                <StackPanel Grid.Column="0"
+                                            Spacing="5"
+                                            VerticalAlignment="Center">
+                                        
+                                        <TextBlock Text="Мoи заметки"
+                                                   FontSize="30"
+                                                   FontWeight="Bold"
+                                                   Foreground="#202238"/>
+                                </StackPanel>
+                                
+                                <TextBox Grid.Column="1"
+                                         x:Name="SearchTextBox"
+                                         PlaceholderText="⌕ Поиск заметок..."
+                                         Width="230" 
+                                         Height="42" 
+                                         Padding="12,9" 
+                                         FontSize="14" 
+                                         VerticalContentAlignment="Center"
+                                         VerticalAlignment="Center" 
+                                         BorderBrush="#EAE7DF"
+                                         BorderThickness="1"
+                                         CornerRadius="11"/>
+                        </Grid>
+                        <Grid Grid.Row="1" 
+                              ColumnDefinitions="Auto,Auto,Auto,*" 
+                              ColumnSpacing="10" Margin="0,26,0,20">
+                                
+                                <Button Grid.Column="0" 
+                                        Content="+ Создать" 
+                                        Height="40"
+                                        Padding="16,0" 
+                                        Background="#FFC928" 
+                                        Foreground="#202238" 
+                                        FontSize="14" 
+                                        FontWeight="SemiBold" 
+                                        BorderThickness="0"
+                                        CornerRadius="10"
+                                        VerticalContentAlignment="Center"/> 
+                                 
+                                 <Button Grid.Column="1" 
+                                         x:Name="EditButton"
+                                         Content="✎ Редактировать" 
+                                         Height="40"
+                                         Padding="16,0" 
+                                         Background="#FFFFFF" 
+                                         Foreground="#39384E" 
+                                         FontSize="14" 
+                                         FontWeight="SemiBold" 
+                                         BorderThickness="0"
+                                         CornerRadius="10"
+                                         VerticalContentAlignment="Center"
+                                         HorizontalContentAlignment="Center"
+                                         HorizontalAlignment="Stretch"/> 
+                                 
+                                 <Button Grid.Column="2" 
+                                         x:Name="DeleteButton"
+                                         Content="Удалить" 
+                                         Height="40"
+                                         Width="140"
+                                         Padding="16,0" 
+                                         Background="#FFF0ED" 
+                                         Foreground="#B84638" 
+                                         FontSize="14" 
+                                         FontWeight="SemiBold" 
+                                         BorderThickness="0"
+                                         CornerRadius="10"
+                                         VerticalContentAlignment="Center"
+                                         HorizontalContentAlignment="Center"
+                                         HorizontalAlignment="Stretch"/> 
+                        </Grid>
+                        
+                        <Border Grid.Row="2"
+                                Background="#FFFFFF"
+                                CornerRadius="20"
+                                BorderBrush="#EAE7DF"
+                                BorderThickness="1"
+                                Padding="24">
+                                
+                                <Grid RowDefinitions="Auto,*">
+                                        
+                                        <StackPanel Grid.Row="0"
+                                                    Spacing="6">
+                                                
+                                        </StackPanel>
+                                </Grid>
+                        </Border>
+                </Grid>
+        </Grid>
+</Window>
